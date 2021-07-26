@@ -3,7 +3,6 @@
     <div style=" display:none;">
         <img id="imagens" >
     </div>
-    
  
     <style type="text/css">
         canvas { border: 1px solid black; }
@@ -15,35 +14,21 @@
     <title>Document</title>
    
 </head>
-<body onload="imgatualiza(),draw();">
+<body onload="image_scroll();">
     
     <canvas id="canvas" width="600" height="600"></canvas>
-   
+    
+    
+  
+
+
+
+
 </body>
 
    
-
+<script src="js/escript.js"></script>
     
  
-<script type="text/javascript">
-function imgatualiza()
-{
-     var novaimg = document.querySelector("#imagens");
-     novaimg.setAttribute('src', 'img1.jpg');
-     console.log("foi");
-}
- function draw()
- {
-    var canvas = document.getElementById('canvas');
-        var ctx = canvas.getContext('2d');
-        var imagen = document.getElementById('imagens')
-        var img = new Image();
-            img.src =  imagen.src;
-        console.log(img.src); 
-        img.onload = function() {
-            ctx.drawImage(img,0,0);
-    }
- }      
-  </script>
-        
+
 </html>
