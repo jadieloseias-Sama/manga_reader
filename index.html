@@ -1,15 +1,49 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-br">
+    <div style=" display:none;">
+        <img id="imagens" >
+    </div>
+    
+ 
+    <style type="text/css">
+        canvas { border: 1px solid black; }
+      </style>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+   
 </head>
-<body>
-
+<body onload="imgatualiza(),draw();">
     
-
-    
+    <canvas id="canvas" width="600" height="600"></canvas>
+   
 </body>
+
+   
+
+    
+ 
+<script type="text/javascript">
+function imgatualiza()
+{
+     var novaimg = document.querySelector("#imagens");
+     novaimg.setAttribute('src', 'img1.jpg');
+     console.log("foi");
+}
+ function draw()
+ {
+    var canvas = document.getElementById('canvas');
+        var ctx = canvas.getContext('2d');
+        var imagen = document.getElementById('imagens')
+        var img = new Image();
+            img.src =  imagen.src;
+        console.log(img.src); 
+        img.onload = function() {
+            ctx.drawImage(img,0,0);
+    }
+ }      
+  </script>
+        
 </html>
