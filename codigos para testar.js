@@ -1,0 +1,15 @@
+var img = new Image();
+img.onload = function() {
+  alert(this.width + 'x' + this.height);
+}
+img.src = 'http://www.google.com/intl/en_ALL/images/logo.gif';
+
+var img = document.getElementById('imageid'); 
+//or however you get a handle to the IMG
+var width = img.clientWidth;
+var height = img.clientHeight;
+
+imageElement.naturalHeight
+e
+
+imageElement.naturalWidth
