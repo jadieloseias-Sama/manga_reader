@@ -1,43 +1,57 @@
+var imagem = new Object();
+imagem.numeroimg = 3;
+imagem.alturaimg = 0;
+imagem.larguraimg = 0;
+imagem.canvasaltura = 0
 
-var heightimg2
 
-
-function imgatualiza(quantas_imagens)
-{ var quantas_imagens
-  var heightimg = 0
-     for (var i = 0; i <= quantas_imagens ; i++)
-        {
+function imgatualiza(Object){
+  var imagen = Object;
+  var novaimg = document.querySelector("#imagens");
+  for (var i = 0; i <= imagen.numeroimg; i++){ 
+          novaimg.setAttribute('src', 'imagen/img' + i + '.jpg');
+          var img = new Image() ;
+          img.src = novaimg.getAttribute('src');
+         img.onload = function(){
+         imagen.canvasaltura = (imagen.canvasaltura + parseInt(this.height));
          var canvas = document.getElementById('canvas');
-         var novaimg = document.querySelector("#imagens");
-         novaimg.setAttribute('src', 'imagen/img' + i + '.jpg');
-            if(0 < heightimg){
-             canvas.setAttribute('height', heightimg)
-             alert(heightimg)
-            }
-             heightimg = draw(heightimg)
-          
-          } 
+         canvas.setAttribute('Height', imagen.canvasaltura);
+         console.log("lado dentro", imagen.canvasaltura);
+          }
+       }
+      let time = setTimeout(function(){
+         draw(imagem)
+       }, 1000)
 }
  
-function draw(heightimg)
- {  heightimg2 = heightimg
-    var canvas = document.getElementById('canvas');
-        var ctx = canvas.getContext('2d');
-        var imagen = document.getElementById('imagens')
-        var img = new Image();
-        img.src =  imagen.src; 
-            img.onload = function() {
-                ctx.drawImage(img,0,heightimg2);
-                heightimg2 = ((heightimg2) + (this.height));
-                
-                }
-    
-    return heightimg2
+function draw(Object){
+        var imagen = Object;
+
+        for (var j = 0; j <= imagen.numeroimg; j++){  
+                 
+          
+                 var canvas = document.getElementById('canvas');
+                 var context = canvas.getContext('2d');
+                 var novaimg = document.querySelector("#imagens");
+                 novaimg.setAttribute('src', 'imagen/img' + j + '.jpg');
+                 console.log("jota", j);
+                 var imagens = document.querySelector("#imagens");
+                 var img = new Image();
+                 img.src =  imagens.src; 
+                    
+                 img.onload = function(){
+                        context.drawImage(img,0,imagen.alturaimg);
+                        imagen.alturaimg = (imagen.alturaimg + parseInt(this.height));
+                        }
+              
+            } 
+       
+
+
+       
  }      
  
- function image_scroll()
- {
-var numero = 3
-imgatualiza(numero)
+ function image_scroll(){
+imgatualiza(imagem);
 
  }
