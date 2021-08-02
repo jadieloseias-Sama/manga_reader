@@ -22,6 +22,7 @@ imagen.alturaimg = (imagen.alturaimg + parseInt(this.height));
 
 function atualizacanvas(Object){
   var imagen = Object;
+  var imgtempo = (250 * imagen.numeroimg);
   var novaimg = document.querySelector("#imagens");
   for (var i = 0; i <= imagen.numeroimg; i++){ 
           novaimg.setAttribute('src', 'imagen/page00' + i + '.jpg');
@@ -38,7 +39,7 @@ function atualizacanvas(Object){
        }
       let time = setTimeout(function(){
          imgatualiza(imagem)
-       }, 1000)
+       }, imgtempo)
 }
  
 function imgatualiza(Object){
