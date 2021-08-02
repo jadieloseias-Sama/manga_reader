@@ -10,6 +10,6 @@ var width = img.clientWidth;
 var height = img.clientHeight;
 
 imageElement.naturalHeight
-e
+age > 18 ? location.assign("continue.html") : stop = true;
 
 imageElement.naturalWidth
