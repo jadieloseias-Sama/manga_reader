@@ -1,5 +1,5 @@
 var imagem = new Object();
-imagem.numeroimg = 4;
+imagem.numeroimg = 8;
 imagem.alturaimg = 0;
 imagem.larguraimg = 0;
 imagem.canvasaltura = 0
@@ -24,7 +24,7 @@ function atualizacanvas(Object){
   var imagen = Object;
   var novaimg = document.querySelector("#imagens");
   for (var i = 0; i <= imagen.numeroimg; i++){ 
-          novaimg.setAttribute('src', 'imagen/img' + i + '.jpg');
+          novaimg.setAttribute('src', 'imagen/page00' + i + '.jpg');
           var img = new Image() ;
           img.src = novaimg.getAttribute('src');
          img.onload = function(){
@@ -38,14 +38,14 @@ function atualizacanvas(Object){
        }
       let time = setTimeout(function(){
          imgatualiza(imagem)
-       }, 30)
+       }, 1000)
 }
  
 function imgatualiza(Object){
 var imagen = Object;
         for (var j = 0; j <= imagen.numeroimg; j++){  
                  var novaimg = document.querySelector("#imagens");
-                 novaimg.setAttribute('src', 'imagen/img' + j + '.jpg');
+                 novaimg.setAttribute('src', 'imagen/page00' + j + '.jpg');
                    imgdesenha(imagen); 
             }      
  }      
